@@ -1,0 +1,51 @@
+.prose {
+  @apply text-primary prose-headings:mb-2 prose-headings:mt-11 prose-headings:font-medium min-w-full;
+}
+
+.prose code {
+  @apply bg-2 px-1 py-0.5 rounded-lg text-secondary;
+}
+
+.prose a {
+  @apply underline-offset-2 text-secondary;
+}
+
+.prose pre {
+  @apply bg-3 rounded-lg border border-2;
+}
+
+.prose pre code {
+  @apply text-secondary bg-inherit p-0;
+}
+
+.prose ul {
+  @apply text-primary marker:text-secondary;
+}
+
+.prose ul li {
+  @apply my-1;
+}
+
+.prose ol {
+  @apply text-primary marker:text-secondary;
+}
+
+.prose ol li p {
+  @apply my-3;
+}
+
+.prose blockquote {
+  @apply italic border-l-4 border-default;
+}
+
+.prose hr {
+  border-color: var(--bg-level-2);
+}
+
+.prose mark {
+  @apply text-primary bg-3 px-1 py-0.5;
+}
+
+.prose img {
+  @apply rounded-lg;
+}
