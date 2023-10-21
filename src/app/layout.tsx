@@ -3,6 +3,7 @@ import { Open_Sans } from "next/font/google";
 import ThemeProvider from "@/components/theme-provider";
 import type { Metadata } from "next";
 import { siteConfig } from "@/config/site";
+import Analytics from "@/components/analytics";
 
 const openSans = Open_Sans({
   subsets: ["latin"],
@@ -41,6 +42,7 @@ export default function RootLayout({
       <body className={openSans.className}>
         <ThemeProvider>
           {children}
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>
