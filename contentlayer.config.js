@@ -14,12 +14,16 @@ export const Article = defineDocumentType(() => ({
   computedFields: {
     slug: {
       type: "string",
-      resolve: (article) => `/${article._raw.flattenedPath}`,
+      resolve: (article) => article._raw.flattenedPath.split('/').slice(1).join('/'),
     },
     readingTime: {
       type: "json",
       resolve: (article) => Math.ceil(readingTime(article.body.raw).minutes),
     },
+    href: {
+      type: "string",
+      resolve: (article) => `/${article._raw.flattenedPath}`,
+    }
   },
 }));
 
@@ -32,10 +36,9 @@ export const Page = defineDocumentType(() => ({
     description: { type: "string" },
   },
   computedFields: {
-    href: {
+    slug: {
       type: "string",
-      resolve: (page) =>
-        `/${page._raw.flattenedPath.split("/").slice(1).join("/")}`,
+      resolve: (page) => page._raw.flattenedPath.split("/").slice(1).join("/")
     },
   },
 }));

@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Article({ article }: { article: Article }) {
   return (
     <Link
-      href={article.slug}
+      href={article.href}
       className="min-w-full max-md:w-[100 + 5] flex flex-col p-5 -mx-5 hover:bg-3 rounded-lg cursor-pointer transition-colors"
     >
       <span className="uppercase  text-secondary mb-1 text-xs tracking-wide">

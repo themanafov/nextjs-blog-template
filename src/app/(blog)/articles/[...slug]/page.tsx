@@ -12,14 +12,13 @@ import { notFound } from "next/navigation";
 
 interface ArticlePageProps {
   params: {
-    slug: string;
+    slug: string[];
   };
 }
 
 async function getArticle(params: ArticlePageProps["params"]) {
-  const article = allArticles.find(
-    (article) => article.slug.split("/articles/")[1] === params.slug,
-  );
+  const slug = params.slug.join('/')
+  const article = allArticles.find((article) => article.slug === slug);
 
   if (!article) {
     return null;

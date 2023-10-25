@@ -10,12 +10,13 @@ import { notFound } from "next/navigation";
 
 interface PageProps {
   params: {
-    slug: string;
+    slug: string[];
   };
 }
 
 async function getPage(params: PageProps["params"]) {
-  const page = allPages.find((page) => page.href.split("/")[1] === params.slug);
+  const href = params.slug.join('/')
+  const page = allPages.find((page) => page.slug === href);
 
   if (!page) {
     return null;

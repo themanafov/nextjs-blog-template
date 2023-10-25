@@ -13,6 +13,7 @@ import { cn } from "@/lib/utils";
 
 export default function Menu() {
   const pathname = usePathname();
+  console.log(allPages)
   return (
     <DropdownMenu>
       <DropdownMenuTrigger
@@ -33,8 +34,8 @@ export default function Menu() {
         {allPages.map((page, i) => (
           <DropdownMenuItem key={i} asChild>
             <Link
-              href={page.href}
-              className={cn("rounded-lg", pathname === page.href ? "bg-3" : "")}
+              href={`/${page.slug}`}
+              className={cn("rounded-lg", pathname === `/${page.slug}` ? "bg-3" : "")}
             >
               {page.title}
             </Link>
