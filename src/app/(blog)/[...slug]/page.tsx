@@ -15,7 +15,7 @@ interface PageProps {
 }
 
 async function getPage(params: PageProps["params"]) {
-  const href = params.slug.join('/')
+  const href = params.slug.join("/");
   const page = allPages.find((page) => page.slug === href);
 
   if (!page) {

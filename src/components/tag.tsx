@@ -9,7 +9,8 @@ export default function Tag() {
   const path = segments.join("/");
 
   if (path.startsWith("articles")) {
-    const article = allArticles.find((article) => article.slug === `/${path}`);
+    const slug = path.split("/").slice(1).join("/");
+    const article = allArticles.find((article) => article.slug === slug);
     if (!article) {
       return null;
     }

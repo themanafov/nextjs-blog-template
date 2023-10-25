@@ -14,7 +14,8 @@ export const Article = defineDocumentType(() => ({
   computedFields: {
     slug: {
       type: "string",
-      resolve: (article) => article._raw.flattenedPath.split('/').slice(1).join('/'),
+      resolve: (article) =>
+        article._raw.flattenedPath.split("/").slice(1).join("/"),
     },
     readingTime: {
       type: "json",
@@ -23,7 +24,7 @@ export const Article = defineDocumentType(() => ({
     href: {
       type: "string",
       resolve: (article) => `/${article._raw.flattenedPath}`,
-    }
+    },
   },
 }));
 
@@ -38,7 +39,7 @@ export const Page = defineDocumentType(() => ({
   computedFields: {
     slug: {
       type: "string",
-      resolve: (page) => page._raw.flattenedPath.split("/").slice(1).join("/")
+      resolve: (page) => page._raw.flattenedPath.split("/").slice(1).join("/"),
     },
   },
 }));

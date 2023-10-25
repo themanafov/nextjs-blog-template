@@ -17,7 +17,7 @@ interface ArticlePageProps {
 }
 
 async function getArticle(params: ArticlePageProps["params"]) {
-  const slug = params.slug.join('/')
+  const slug = params.slug.join("/");
   const article = allArticles.find((article) => article.slug === slug);
 
   if (!article) {
